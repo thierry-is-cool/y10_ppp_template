@@ -82,6 +82,7 @@ def play_card(player_deck, center_card, deck):
             card = input("This card is not valid, please reenter")
         player_deck.remove(card)
         center_card = card
+        
     
         
 
