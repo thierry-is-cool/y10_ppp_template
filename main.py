@@ -81,6 +81,7 @@ def play_card(player_deck, center_card, deck):
         if card[0] == center_card[0] or card[1] == center_card[1]:
             player_deck.remove(card)
             center_card = card
+            
 
 
 
