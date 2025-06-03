@@ -72,10 +72,12 @@ def play_card(player_deck, center_card, deck):
     card = input("What card do you wish to place?, press 'd' to draw card")
     if card == 'd':
         draw_card(player_deck, deck)
-        
+
     while card not in player_deck and card != 'd':
         print("This card is not in your deck, please reenter")
         card = input("What card do you wish to place?")
+
+        
 
 def main(deck):
     center_card = deck[0]
