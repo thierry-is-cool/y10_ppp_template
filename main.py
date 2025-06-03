@@ -78,7 +78,7 @@ def play_card(player_deck, center_card, deck):
         card = input("What card do you wish to place?")
 
     if card in player_deck:
-       while card[0] != center_card[0] and card[1] != center_card[1]:
+       while card[0] != center_card[0] and card[1] != center_card[1] and card != 'd':
         card = input("This card is not valid, please reenter")
     player_deck.remove(card)
     center_card = card
