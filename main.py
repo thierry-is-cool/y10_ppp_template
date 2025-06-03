@@ -77,7 +77,12 @@ def play_card(player_deck, center_card, deck):
         print("This card is not in your deck, please reenter")
         card = input("What card do you wish to place?")
 
-        
+    if card in player_deck:
+        if card[0] == center_card[0] or card[1] == center_card[1]:
+            player_deck.remove(card)
+            center_card = card
+
+
 
 def main(deck):
     center_card = deck[0]
