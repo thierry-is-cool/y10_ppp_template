@@ -14,13 +14,13 @@ random.shuffle(deck)
 def distribute_cards(number, deck):
     player_deck = []
     for i in range(number):
-        x = deck.pop[i]
+        x = deck.pop(i)
         player_deck.append(x)
 
     return player_deck
 
 def next_turn():
-    ready = input("Has the lkaptop passed to the next user? (Y?N)")
+    ready = input("Has the laptop passed to the next user? (Y?N)")
     while ready.upper() != 'Y':
         ready = input("OK, now has the laptop been passed (Y/N)")
     if ready  == 'Y':
@@ -31,31 +31,43 @@ def draw_card(player_deck, deck):
     player_deck.append(x)
     return player_deck
 
-def play_card(player_deck, center_card, deck):
+def play_card(player_deck,other_play_deck,center_card, deck):
     card = input("What card do you wish to place?, press 'd' to draw card")
 
     while card not in player_deck and card != 'd':
         print("This card is not in your deck, please reenter")
         card = input("What card do you wish to place?, press 'd' to draw card")
 
-    if card in player_deck:
-        while card[0] != center_card[0] and card[1] != center_card[1]:
-            if card != 'd':
-                card = input("This card is not valid, please reenter, press 'd' to draw card")
-        player_deck.remove(card)
-        center_card = card
-
     if card == 'd':
         draw_card(player_deck, deck)
 
+    if card in player_deck:
+        while card[0] != center_card[0] and card[1] != center_card[1]:
+            card = input("This card is not valid, please reenter, press 'd' to draw card")
+            if card == 'd':
+                draw_card(player_deck, deck)
+                break
+
+        player_deck.remove(card)
+        center_card = card
 
     
         
 def main(deck):
+    os.system('clear')
     center_card = deck[0]
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
 
+    player1 = input("Player1, enter your name: ")
+    player2 = input("Player2, enter your name: ")
+    print()
+    print("{} starts first!".format(player1.capitalize()))
+    os.system('clear')
+
+    play_card(player1_deck, player2_deck,center_card,deck)
+
+os.system('clear')
 rules = input('Do you want to review the rules?(Y/N)')
 while rules != "N" and rules != "Y":
     rules = input("Please reenter with (Y/N)")
@@ -93,3 +105,4 @@ Skip everyone – goes back to your turn
 You cannot play after you draw""")
 
     
+main(deck)
