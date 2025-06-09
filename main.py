@@ -67,7 +67,9 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
 
     if "⏭" in card:
         print("Since {}'s turn is skipped, it is {}'s turn again!".format(main_player, other_player))
-
+    
+    if "+2" in card:
+        print("Two cards are added to {}'s deck".format(other_player))
       
 def main(deck):
     introduction()
