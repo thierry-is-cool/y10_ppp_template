@@ -70,6 +70,8 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
     
     if "+2" in card:
         print("Two cards are added to {}'s deck".format(other_player))
+        for i in range(2):
+            draw_card(player_deck, deck)
       
 def main(deck):
     introduction()
