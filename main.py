@@ -64,6 +64,9 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
 
         player_deck.remove(card)
         center_card = card
+
+    if "⏭" in card:
+        print("Since {}'s turn is skipped, it is {}'s turn again!".format())
       
 def main(deck):
     introduction()
