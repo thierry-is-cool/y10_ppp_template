@@ -15,40 +15,14 @@ def introduction():
     rules = input('Do you want to review the rules?(Y/N)')
     while rules != "N" and rules != "Y":
         rules = input("Please reenter with (Y/N)")
-    
-    if rules == 'Y':
-        print("""Each player has 7 cards 
-
-First one to use all their cards win 
-
-You can put a card of the same colour on top of each other 
-
-You can put a card with the same number or action on top of each other  
-
-Action cards  
-
-Reverse – goes back to your turn 
-
-Skip – goes back to your turn 
-
-Draw 2 – opponent draws 2 
-
-Wild draw 4 – opponent draws 4, and you get to choose the colour of the next card placed 
-
-Change colour – changes the colour of the next card placed 
-
-Flip – flip every card 
-
-Wild draw colour card – draw until you get the colour chosen and then said colour will be the colour of the next card placed 
-
-Draw 1 – opponents draw 1 
-
-Draw 5 – opponents draw 5 
-
-Skip everyone – goes back to your turn 
-
-You cannot play after you draw""")
-
+    print()
+    if rules != "N":
+        print("""You can play a card when it matches either the colour or number of the card, 
+or if you have any wild cards. You must draw a card from the draw pile if you have no playable cards. 
+The aim of UNO is to be the first player to eliminate all their cards so you'll want to avoid picking up 
+cards as best you can.""")
+        print()
+        
 def distribute_cards(number, deck):
     player_deck = []
     for i in range(number):
@@ -91,7 +65,6 @@ def play_card(player_deck,other_play_deck,center_card, deck):
       
 def main(deck):
     introduction()
-    os.system('clear')
     center_card = deck[0]
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
