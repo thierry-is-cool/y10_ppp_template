@@ -72,7 +72,20 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
         print("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             draw_card(player_deck, deck)
-      
+
+def check_deck(deck):
+    if len(deck) <= 5:
+        deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'R⏭', 
+         'Y0', 'Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6','Y7', 'Y8', 'Y9', 'Y+2', 'Y⏭',
+         'G0', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6','G7', 'G8', 'G9', 'G+2', 'G⏭', 
+         'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'B⏭',
+         'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'R⏭', 
+         'Y0', 'Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6','Y7', 'Y8', 'Y9', 'Y+2', 'Y⏭',
+         'G0', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6','G7', 'G8', 'G9', 'G+2', 'G⏭',
+         'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'B⏭',]
+        random.shuffle(deck)
+    return deck
+
 def main(deck):
     introduction()
     center_card = deck[0]
@@ -87,6 +100,8 @@ def main(deck):
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
         play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
+        check_deck(deck)
+        
 
 
     
