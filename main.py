@@ -46,7 +46,7 @@ def draw_card(player_deck, deck):
 def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_player):
     print("{}, this is your deck: {}".format(main_player, player_deck))
     print()
-    card = input("What card do you wish to place?, press 'd' to draw card")
+    card = input("What card do you wish to place?, press 'd' to draw card: ")
 
     while card not in player_deck and card != 'd':
         print("This card is not in your deck, please reenter")
