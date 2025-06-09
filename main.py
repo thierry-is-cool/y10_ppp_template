@@ -43,8 +43,8 @@ def draw_card(player_deck, deck):
     player_deck.append(x)
     return player_deck
 
-def play_card(player_deck,other_play_deck,center_card, deck):
-    print("This is your deck:", player_deck)
+def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_player):
+    print("{}, this is your deck: {}".format(main_player, player_deck))
     print()
     card = input("What card do you wish to place?, press 'd' to draw card")
 
@@ -78,7 +78,7 @@ def main(deck):
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
-        play_card(player1_deck, player2_deck,center_card,deck)
+        play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
 
 
     
