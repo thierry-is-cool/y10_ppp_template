@@ -44,8 +44,6 @@ def draw_card(player_deck, deck):
     return player_deck
 
 def play_card(player_deck,other_play_deck,center_card, deck):
-    print("This is your deck:", player_deck)
-    print()
     card = input("What card do you wish to place?, press 'd' to draw card")
 
     while card not in player_deck and card != 'd':
@@ -77,8 +75,7 @@ def main(deck):
     print("{} starts first!".format(player1.capitalize()))
     os.system('clear')
 
-    while len(player1_deck) != 0 or len(player2_deck) != 0:
-        play_card(player1_deck, player2_deck,center_card,deck)
+    play_card(player1_deck, player2_deck,center_card,deck)
 
 
     
