@@ -14,7 +14,7 @@ random.shuffle(deck)
 def print_slow(txt):
     for x in txt:                     
         print(x, end='', flush=True)  
-        sleep(0.05)
+        sleep(0.025)
     return None
 
 def introduction():
@@ -95,7 +95,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     
     if "+2" in card:
         print()
-        print("Two cards are added to {}'s deck".format(other_player))
+        print_slow("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             other_player_deck = draw_card(other_player_deck, deck)
 
@@ -124,10 +124,12 @@ def main(deck):
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
 
-    player1 = input("Player1, enter your name: ")
-    player2 = input("Player2, enter your name: ")
+    print_slow("Player1, enter your name: ")
+    player1 = input()
+    print_slow("Player2, enter your name: ")
+    player2 = input()
     print()
-    print("{} starts first!".format(player1.capitalize()))
+    print_slow("{} starts first!".format(player1.capitalize()))
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
@@ -141,9 +143,9 @@ def main(deck):
     os.system('clear')
         
     if len(player1_deck) == 0:
-        print("Congrats, {} has won!".format(player1))
+        print_slow("Congrats, {} has won!".format(player1))
     else:
-        print("Congrats, {} has won!".format(player2))
+        print_slow("Congrats, {} has won!".format(player2))
 
 
     
