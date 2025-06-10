@@ -75,6 +75,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     if card == 'd':
         player_deck = draw_card(player_deck, deck)
         print_slow("You have drawn the card!")
+        print()
 
 
     if card in player_deck:
