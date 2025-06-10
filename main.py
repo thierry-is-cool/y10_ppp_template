@@ -86,9 +86,9 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     while repeat == True:
         print()
-        center_card, player_deck, other_player_deck = play_card(player_deck, other_player_deck, center_card, deck, main_player, other_player)
+        center_card, player_deck, other_player_deck, repeat = play_card(player_deck, other_player_deck, center_card, deck, main_player, other_player)
 
-    return center_card, player_deck, other_player_deck
+    return center_card, player_deck, other_player_deck, repeat
 
 
 def check_deck(deck):
@@ -117,10 +117,10 @@ def main(deck):
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
-        center_card, player1_deck, player2_deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
+        center_card, player1_deck, player2_deck, repeat = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
         next_turn()
-        center_card, player2_deck, player1_deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
+        center_card, player2_deck, player1_deck, repeat = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
         next_turn()
         
