@@ -21,9 +21,11 @@ def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
     print()
-    rules = input(print_slow('Do you want to review the rules?(Y/N): '))
+    print_slow('Do you want to review the rules?(Y/N): ')
+    rules = input()
     while rules != "N" and rules != "Y":
-        rules = input("Please reenter with (Y/N)")
+        print_slow("Please reenter with (Y/N)")
+        rules = input()
     print()
     if rules != "N":
         print_slow("""You can play a card when it matches either the colour or number of the card, 
@@ -41,11 +43,13 @@ def distribute_cards(number, deck):
     return player_deck
 
 def next_turn():
-    print("The player's turn has ended. Please pass the laptop to the next user")
+    print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
-    ready = input("Has the laptop passed to the next user? (Y/N)")
+    print_slow("Has the laptop passed to the next user? (Y/N)")
+    ready = input()
     while ready.upper() != 'Y':
-        ready = input("OK, now has the laptop been passed (Y/N)")
+        print_slow("OK, now has the laptop been passed (Y/N)")
+        ready = input()
     os.system('clear')
 
 def draw_card(player_deck, deck):
@@ -60,30 +64,33 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     print()
     print_slow("{}, this is your deck: {}".format(main_player, player_deck))
     print()
-    card = input(print_slow("What card do you wish to place?, press 'd' to draw card: "))
+    print_slow("What card do you wish to place?, press 'd' to draw card: ")
+    card = input()
 
     while card not in player_deck and card != 'd':
-        print("This card is not in your deck, please reenter")
-        card = input("What card do you wish to place?, press 'd' to draw card: ")
+        print_slow("This card is not in your deck, please reenter")
+        print_slow("What card do you wish to place?, press 'd' to draw card: ")
+        card = input()
 
     if card == 'd':
         player_deck = draw_card(player_deck, deck)
 
     if card in player_deck:
         while card[0] != center_card[0] and card[1] != center_card[1]:
-            card = input("This card is not valid, please reenter, press 'd' to draw card: ")
+            print_slow("This card is not valid, please reenter, press 'd' to draw card: ")
+            card = input()
             if card == 'd':
                 draw_card(player_deck, deck)
                 break
         
         print()
-        print("{} is successfully placed".format(card))
+        print_slow("{} is successfully placed".format(card))
         player_deck.remove(card)
         center_card = card
 
     if "S" in card:
         print()
-        print("Since {}'s turn is skipped, it is {}'s turn again!".format(main_player, other_player))
+        print_slow("Since {}'s turn is skipped, it is {}'s turn again!".format(main_player, other_player))
         repeat = True
     
     if "+2" in card:
