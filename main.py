@@ -39,8 +39,7 @@ def next_turn():
     while ready.upper() != 'Y':
         print()
         ready = input("OK, now has the laptop been passed (Y/N)")
-    if ready  == 'Y':
-        os.system('clear')
+    os.system('clear')
 
 def draw_card(player_deck, deck):
     random.shuffle(deck)
