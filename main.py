@@ -43,6 +43,8 @@ def distribute_cards(number, deck):
     return player_deck
 
 def next_turn():
+    sleep(2)
+    os.system('clear')
     print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
     print_slow("Has the laptop passed to the next user? (Y/N)")
