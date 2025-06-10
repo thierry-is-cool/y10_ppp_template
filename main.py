@@ -45,7 +45,7 @@ def draw_card(player_deck, deck):
     return player_deck
 
 def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_player):
-    print("Centre card: {}")
+    print("Centre card: {}".format(center_card))
     print()
     print("{}, this is your deck: {}".format(main_player, player_deck))
     print()
