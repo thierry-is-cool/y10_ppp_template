@@ -13,6 +13,8 @@ random.shuffle(deck)
 
 def introduction():
     os.system('clear')
+    print("Welcome to two player UNO by Thierry")
+    print()
     rules = input('Do you want to review the rules?(Y/N)')
     while rules != "N" and rules != "Y":
         rules = input("Please reenter with (Y/N)")
@@ -35,7 +37,7 @@ def distribute_cards(number, deck):
 def next_turn():
     print("The player's turn has ended. Please pass the laptop to the next user")
     print()
-    ready = input("Has the laptop passed to the next user? (Y?N)")
+    ready = input("Has the laptop passed to the next user? (Y/N)")
     while ready.upper() != 'Y':
         ready = input("OK, now has the laptop been passed (Y/N)")
     os.system('clear')
@@ -90,7 +92,6 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     return center_card, player_deck, other_player_deck, repeat
 
-
 def check_deck(deck):
     if len(deck) <= 5:
         deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'R⏭', 
@@ -126,6 +127,10 @@ def main(deck):
         
     os.system('clear')
         
+    if len(player1_deck) == 0:
+        print("Congrats, {} has won!".format(player1))
+    else:
+        print("Congrats, {} has won!".format(player2))
 
 
     
