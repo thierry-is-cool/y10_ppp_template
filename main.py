@@ -45,6 +45,8 @@ def draw_card(player_deck, deck):
     return player_deck
 
 def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_player):
+    print("Centre card: {}")
+    print()
     print("{}, this is your deck: {}".format(main_player, player_deck))
     print()
     card = input("What card do you wish to place?, press 'd' to draw card: ")
@@ -62,7 +64,8 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
             if card == 'd':
                 draw_card(player_deck, deck)
                 break
-
+        
+        print("{} is successfully placed".format(card))
         player_deck.remove(card)
         center_card = card
 
