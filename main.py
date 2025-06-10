@@ -1,4 +1,5 @@
 import  random
+from time import sleep
 import os 
 deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS', 
          'Y0', 'Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6','Y7', 'Y8', 'Y9', 'Y+2', 'YS',
@@ -10,17 +11,21 @@ deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS',
          'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'BS',]
 
 random.shuffle(deck)
+def print_slow(txt):
+    for x in txt:                     
+        print(x, end='', flush=True)  
+        sleep(0.05)
 
 def introduction():
     os.system('clear')
-    print("Welcome to two player UNO by Thierry")
+    print_slow("Welcome to two player UNO by Thierry")
     print()
-    rules = input('Do you want to review the rules?(Y/N)')
+    rules = input(print_slow('Do you want to review the rules?(Y/N)'))
     while rules != "N" and rules != "Y":
         rules = input("Please reenter with (Y/N)")
     print()
     if rules != "N":
-        print("""You can play a card when it matches either the colour or number of the card, 
+        print_slow("""You can play a card when it matches either the colour or number of the card, 
 or if you have any wild cards. You must draw a card from the draw pile if you have no playable cards. 
 The aim of UNO is to be the first player to eliminate all their cards so you'll want to avoid picking up 
 cards as best you can.""")
@@ -50,11 +55,11 @@ def draw_card(player_deck, deck):
 
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
-    print("Centre card: {}".format(center_card))
+    print_slow("Centre card: {}".format(center_card))
     print()
-    print("{}, this is your deck: {}".format(main_player, player_deck))
+    print_slow("{}, this is your deck: {}".format(main_player, player_deck))
     print()
-    card = input("What card do you wish to place?, press 'd' to draw card: ")
+    card = input(print_slow("What card do you wish to place?, press 'd' to draw card: "))
 
     while card not in player_deck and card != 'd':
         print("This card is not in your deck, please reenter")
