@@ -8,7 +8,8 @@ deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS',
          'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS', 
          'Y0', 'Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6','Y7', 'Y8', 'Y9', 'Y+2', 'YS',
          'G0', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6','G7', 'G8', 'G9', 'G+2', 'GS',
-         'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'BS',]
+         'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'BS',
+         'W+4', 'W+4']
 
 random.shuffle(deck)
 def print_slow(txt):
@@ -106,6 +107,27 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print_slow("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             other_player_deck = draw_card(other_player_deck, deck)
+    if "W" in card:
+        print()
+        print_slow("Since you got a wild card, choose a colour to proceed (R,B,Y,G): ")
+        colour = input()
+        while colour != "R" and colour != "B" and colour != "Y" and colour != "G":
+            print_slow("Invalid, please reenter with (R,B,Y,G): ")
+            colour = input()
+
+        if colour == "R":
+            center_card = "RED"
+        elif colour == "B":
+            center_card = "BLUE"
+        elif colour == "Y":
+            center_card = "YELLOW"
+        elif colour == "G":
+            center_card = "GREEN"
+
+        print()
+        print_slow("Four cards are added to {}'s deck".format(other_player))
+        for i in range(4):
+            other_player_deck = draw_card(other_player_deck, deck)
 
     while repeat == True:
         print()
@@ -129,6 +151,10 @@ def check_deck(deck):
 def main(deck):
     introduction()
     center_card = deck.pop(0)
+    while "W" in center_card:
+        deck.append("W+4")
+        center_card = deck.pop(0)
+        
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
 
