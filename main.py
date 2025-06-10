@@ -53,14 +53,14 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
 
     while card not in player_deck and card != 'd':
         print("This card is not in your deck, please reenter")
-        card = input("What card do you wish to place?, press 'd' to draw card")
+        card = input("What card do you wish to place?, press 'd' to draw card: ")
 
     if card == 'd':
         draw_card(player_deck, deck)
 
     if card in player_deck:
         while card[0] != center_card[0] and card[1] != center_card[1]:
-            card = input("This card is not valid, please reenter, press 'd' to draw card")
+            card = input("This card is not valid, please reenter, press 'd' to draw card: ")
             if card == 'd':
                 draw_card(player_deck, deck)
                 break
@@ -92,7 +92,7 @@ def check_deck(deck):
 
 def main(deck):
     introduction()
-    center_card = deck[0]
+    center_card = deck.pop(0)
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
 
@@ -105,6 +105,7 @@ def main(deck):
     while len(player1_deck) != 0 or len(player2_deck) != 0:
         play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
+        
         
 
 
