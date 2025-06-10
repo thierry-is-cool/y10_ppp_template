@@ -15,6 +15,7 @@ def print_slow(txt):
     for x in txt:                     
         print(x, end='', flush=True)  
         sleep(0.05)
+    return None
 
 def introduction():
     os.system('clear')
