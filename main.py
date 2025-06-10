@@ -69,6 +69,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
                 draw_card(player_deck, deck)
                 break
         
+        print()
         print("{} is successfully placed".format(card))
         player_deck.remove(card)
         center_card = card
