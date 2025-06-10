@@ -40,7 +40,8 @@ def next_turn():
         os.system('clear')
 
 def draw_card(player_deck, deck):
-    x = deck[0]
+    random.shuffle(deck)
+    x = deck.pop(0)
     player_deck.append(x)
     return player_deck
 
