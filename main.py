@@ -130,6 +130,7 @@ def main(deck):
     player2 = input()
     print()
     print_slow("{} starts first!".format(player1.capitalize()))
+    sleep(2)
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
