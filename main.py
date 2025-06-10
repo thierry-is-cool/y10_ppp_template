@@ -155,8 +155,6 @@ def main(deck):
         print_slow("Congrats, {} has won!".format(player1))
     else:
         print_slow("Congrats, {} has won!".format(player2))
-
-
     
 main(deck)
 
