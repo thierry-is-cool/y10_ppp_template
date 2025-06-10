@@ -70,6 +70,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     while card not in player_deck and card != 'd':
         print_slow("This card is not in your deck, please reenter")
+        print()
         print_slow("What card do you wish to place?, press 'd' to draw card: ")
         card = input()
 
