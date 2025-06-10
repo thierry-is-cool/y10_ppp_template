@@ -46,6 +46,7 @@ def draw_card(player_deck, deck):
     return player_deck
 
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
+    repeat = False
     print("Centre card: {}".format(center_card))
     print()
     print("{}, this is your deck: {}".format(main_player, player_deck))
@@ -71,9 +72,12 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         center_card = card
 
     if "⏭" in card:
+        print()
         print("Since {}'s turn is skipped, it is {}'s turn again!".format(main_player, other_player))
+        repeat = True
     
     if "+2" in card:
+        print()
         print("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             other_player_deck = draw_card(other_player_deck, deck)
