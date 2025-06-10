@@ -84,7 +84,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
 
     if card in player_deck:
-        while card[0] != center_card[0] and card[1] != center_card[1]:
+        while card[0] != center_card[0] and card[1] != center_card[1] and card != "W+4":
             print_slow("This card is not valid, please reenter, press 'd' to draw card: ")
             card = input()
             if card == 'd':
@@ -154,7 +154,7 @@ def main(deck):
     while "W" in center_card:
         deck.append("W+4")
         center_card = deck.pop(0)
-        
+
     player1_deck = distribute_cards(7,deck)
     player2_deck = distribute_cards(7,deck)
 
