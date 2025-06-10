@@ -86,7 +86,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     while repeat == True:
         print()
-        center_card, player_deck, other_player_deck = play_card(player_deck, other_player_deck, center_card, main_player, other_player)
+        center_card, player_deck, other_player_deck = play_card(player_deck, other_player_deck, center_card, deck, main_player, other_player)
 
     return center_card, player_deck, other_player_deck
 
