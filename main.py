@@ -37,7 +37,6 @@ def next_turn():
     print()
     ready = input("Has the laptop passed to the next user? (Y?N)")
     while ready.upper() != 'Y':
-        print()
         ready = input("OK, now has the laptop been passed (Y/N)")
     os.system('clear')
 
@@ -84,6 +83,10 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             other_player_deck = draw_card(other_player_deck, deck)
+
+    while repeat == True:
+        print()
+        center_card, player_deck, other_player_deck = play_card(player_deck, other_player_deck, center_card, main_player, other_player)
 
     return center_card, player_deck, other_player_deck
 
