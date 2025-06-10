@@ -13,7 +13,7 @@ deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS',
 random.shuffle(deck)
 def print_slow(txt):
     for x in txt:                     
-        print(x, end='', flush=True)  
+        print(x, end='', flush = True)  
         sleep(0.025)
     return None
 
@@ -43,6 +43,7 @@ def distribute_cards(number, deck):
     return player_deck
 
 def next_turn():
+    print()
     print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
     print_slow("Has the laptop passed to the next user? (Y/N)")
