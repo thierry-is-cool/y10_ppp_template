@@ -44,7 +44,7 @@ def draw_card(player_deck, deck):
     player_deck.append(x)
     return player_deck
 
-def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_player):
+def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     print("Centre card: {}".format(center_card))
     print()
     print("{}, this is your deck: {}".format(main_player, player_deck))
@@ -75,7 +75,10 @@ def play_card(player_deck,other_play_deck,center_card, deck, main_player, other_
     if "+2" in card:
         print("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
-            draw_card(player_deck, deck)
+            draw_card(other_player_deck, deck)
+
+    return center_card, player_deck, other_player_deck
+
 
 def check_deck(deck):
     if len(deck) <= 5:
@@ -103,9 +106,12 @@ def main(deck):
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
-        play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
+        center_card, player1_deck, player2_deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
+        check_deck(deck)
+        center_card, player2_deck, player1_deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
         
+    os.
         
 
 
