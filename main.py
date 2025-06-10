@@ -74,6 +74,8 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     if card == 'd':
         player_deck = draw_card(player_deck, deck)
+        print_slow("You have drawn the card!")
+
 
     if card in player_deck:
         while card[0] != center_card[0] and card[1] != center_card[1]:
