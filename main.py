@@ -33,8 +33,11 @@ def distribute_cards(number, deck):
     return player_deck
 
 def next_turn():
+    print("The player's turn has ended. Please pass the laptop to the next user")
+    print()
     ready = input("Has the laptop passed to the next user? (Y?N)")
     while ready.upper() != 'Y':
+        print()
         ready = input("OK, now has the laptop been passed (Y/N)")
     if ready  == 'Y':
         os.system('clear')
@@ -113,8 +116,10 @@ def main(deck):
     while len(player1_deck) != 0 or len(player2_deck) != 0:
         center_card, player1_deck, player2_deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
+        next_turn()
         center_card, player2_deck, player1_deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
+        next_turn()
         
     os.system('clear')
         
