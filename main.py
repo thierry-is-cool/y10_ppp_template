@@ -20,7 +20,7 @@ def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
     print()
-    rules = input(print_slow('Do you want to review the rules?(Y/N)'))
+    rules = input(print_slow('Do you want to review the rules?(Y/N): '))
     while rules != "N" and rules != "Y":
         rules = input("Please reenter with (Y/N)")
     print()
