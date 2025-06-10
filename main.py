@@ -43,7 +43,6 @@ def distribute_cards(number, deck):
     return player_deck
 
 def next_turn():
-    print()
     print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
     print_slow("Has the laptop passed to the next user? (Y/N)")
@@ -77,6 +76,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     if card == 'd':
         player_deck = draw_card(player_deck, deck)
         print_slow("You have drawn the card!")
+        print()
         print()
 
 
