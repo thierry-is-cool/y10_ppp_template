@@ -57,7 +57,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         card = input("What card do you wish to place?, press 'd' to draw card: ")
 
     if card == 'd':
-        draw_card(player_deck, deck)
+        player_deck = draw_card(player_deck, deck)
 
     if card in player_deck:
         while card[0] != center_card[0] and card[1] != center_card[1]:
@@ -76,7 +76,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     if "+2" in card:
         print("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
-            draw_card(other_player_deck, deck)
+            other_player_deck = draw_card(other_player_deck, deck)
 
     return center_card, player_deck, other_player_deck
 
