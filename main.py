@@ -111,7 +111,7 @@ def main(deck):
         center_card, player2_deck, player1_deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
         
-    os.
+    os.system('clear')
         
 
 
