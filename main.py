@@ -1,5 +1,6 @@
 from colorama import Fore, Back, Style
 import  random
+import time
 from time import sleep
 import os 
 deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS', 
@@ -38,6 +39,11 @@ or if you have any wild cards. You must draw a card from the draw pile if you ha
 The aim of UNO is to be the first player to eliminate all their cards so you'll want to avoid picking up 
 cards as best you can.""")
         print()
+        
+    for i in range(101):
+        print(Style.BRIGHT + Fore.CYAN + f"\rLoading: {i}%", end="")
+        time.sleep(0.05)
+    print()
         
 def distribute_cards(number, deck):
     player_deck = []
