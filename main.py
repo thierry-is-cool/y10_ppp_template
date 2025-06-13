@@ -36,7 +36,7 @@ def print_with_colour(deck):
             deck1.append(i)
 
     for i in range(len(deck1)):
-        print_slow(deck1[i], end = " ")
+        print(deck1[i], end = " ")
     
 def introduction():
     os.system('clear')
