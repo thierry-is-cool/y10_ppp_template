@@ -138,8 +138,8 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
                 break
         
         print()
-        print_colour_card(card)
-        print_slow("is successfully placed")
+        i = print_colour_card(card)
+        print_slow("{} is successfully placed".format(i))
         print()
         player_deck.remove(card)
         center_card = card
