@@ -37,9 +37,6 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print_slow(deck1[i], end = " ")
-def print_with_colour(txt):
-    pass
-
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
@@ -59,7 +56,7 @@ cards as best you can.""")
         
     for i in range(101):
         print(Style.BRIGHT + Fore.CYAN + f"\rLoading: {i}%", end="")
-        time.sleep(0.05)
+        time.sleep(0.025)
 
     print(Style.RESET_ALL)
     print()
