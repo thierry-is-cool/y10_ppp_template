@@ -38,7 +38,7 @@ def print_with_colour(deck):
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
 
-def print_center_card(center_card):
+def print_colour_card(center_card):
     i = center_card
     if i[0] == "B":
         i = Fore.BLUE + Style.BRIGHT + i + Style.RESET_ALL
@@ -104,7 +104,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
     repeat = False
     print("Centre card:", end = " ")
 
-    print_center_card(center_card)
+    print_colour_card(center_card)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
     print_with_colour(player_deck)
@@ -134,7 +134,8 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
                 break
         
         print()
-        print_slow("{} is successfully placed".format(card))
+        print_colour_card(card, end = " ")
+        print_slow("is successfully placed")
         print()
         player_deck.remove(card)
         center_card = card
