@@ -37,6 +37,7 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print_slow(deck1[i], end = " ")
+    
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
