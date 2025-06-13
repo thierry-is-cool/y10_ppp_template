@@ -1,3 +1,4 @@
+from colorama import Fore, Back, Style
 import  random
 from time import sleep
 import os 
@@ -48,10 +49,10 @@ def next_turn():
     os.system('clear')
     print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
-    print_slow("Has the laptop passed to the next user? (Y/N)")
+    print_slow("Has the laptop passed to the next user? (Y/N): ")
     ready = input()
     while ready.upper() != 'Y':
-        print_slow("OK, now has the laptop been passed (Y/N)")
+        print_slow("OK, now has the laptop been passed (Y/N): ")
         ready = input()
     os.system('clear')
 
@@ -99,7 +100,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     if "S" in card:
         print()
-        print_slow("Since {}'s turn is skipped, it is {}'s turn again!".format(main_player, other_player))
+        print_slow("Since {}'s turn is skipped, it is {}'s turn again!".format(other_player, main_player))
         repeat = True
     
     if "+2" in card:
