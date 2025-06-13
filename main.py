@@ -37,7 +37,19 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
-    
+
+def print_center_card(center_card):
+    i = center_card
+    if i[0] == "B":
+        i = Fore.BLUE + Style.BRIGHT + i + Style.RESET_ALL
+    elif i[0] == "Y":
+        i = Fore.YELLOW + Style.BRIGHT + i + Style.RESET_ALL
+    elif i[0] == "R":
+        i = Fore.RED + Style.BRIGHT + i + Style.RESET_ALL
+    elif i[0] == "G":
+            i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
+    print(i)
+
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
@@ -90,7 +102,8 @@ def draw_card(player_deck, deck):
 
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
-    print_slow("Centre card: {}".format(center_card))
+    print_slow("Centre card:", end = " ")
+    print_center_card(center_card)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
     print_with_colour(player_deck)
