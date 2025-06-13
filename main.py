@@ -43,6 +43,8 @@ cards as best you can.""")
     for i in range(101):
         print(Style.BRIGHT + Fore.CYAN + f"\rLoading: {i}%", end="")
         time.sleep(0.05)
+
+    print(Style.RESET_ALL)
     print()
         
 def distribute_cards(number, deck):
