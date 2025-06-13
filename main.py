@@ -102,7 +102,8 @@ def draw_card(player_deck, deck):
 
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
-    print_slow("Centre card:", end = " ")
+    print("Centre card:", end = " ")
+
     print_center_card(center_card)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
