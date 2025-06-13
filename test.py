@@ -17,9 +17,9 @@ def print_with_colour(deck):
             i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
             joe.append(i)
     
+    print(joe)
     return joe
 
 deck = ["B1", "Y3", "G4", "R5"]
 deck = print_with_colour(deck)
 
-print(deck)
