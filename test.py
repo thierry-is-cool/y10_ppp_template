@@ -22,6 +22,3 @@ def print_with_colour(deck):
 
 deck = ["B1", "Y3", "G4", "R5"]
 deck = print_with_colour(deck)
-
-for i in range(len(deck)):
-    print(deck[i], end = " ")
