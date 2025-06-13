@@ -19,6 +19,9 @@ def print_slow(txt):
         sleep(0.025)
     return None
 
+def print_with_colour(txt):
+    pass
+
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
