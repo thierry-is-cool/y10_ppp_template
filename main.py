@@ -61,7 +61,7 @@ def introduction():
     print_slow('Do you want to review the rules?(Y/N): ')
     rules = input()
     while rules != "N" and rules != "Y":
-        print_slow("Please reenter with (Y/N)")
+        print_slow("Please reenter with (Y/N): ")
         rules = input()
     print()
     if rules != "N":
