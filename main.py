@@ -52,6 +52,8 @@ def print_colour_card(center_card):
             i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
     print(i)
 
+    return i
+
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
@@ -136,7 +138,8 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
                 break
         
         print()
-        print_colour_card(card) + print_slow("is successfully placed")
+        print_colour_card(card)
+        print_slow("is successfully placed")
         print()
         player_deck.remove(card)
         center_card = card
