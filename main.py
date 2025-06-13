@@ -34,6 +34,8 @@ def print_with_colour(deck):
         elif i[0] == "G":
             i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
             deck1.append(i)
+        else:
+            deck1.append(i)
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
