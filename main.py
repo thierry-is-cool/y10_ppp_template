@@ -39,7 +39,6 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
-
 def print_colour_card(center_card):
     i = center_card
     if i[0] == "B":
@@ -50,10 +49,7 @@ def print_colour_card(center_card):
         i = Fore.RED + Style.BRIGHT + i + Style.RESET_ALL
     elif i[0] == "G":
             i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
-    print(i)
-
     return i
-
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
@@ -77,7 +73,6 @@ cards as best you can.""")
 
     print(Style.RESET_ALL)
     print()
-        
 def distribute_cards(number, deck):
     player_deck = []
     for i in range(number):
@@ -85,7 +80,6 @@ def distribute_cards(number, deck):
         player_deck.append(x)
 
     return player_deck
-
 def next_turn():
     sleep(2)
     os.system('clear')
@@ -97,13 +91,11 @@ def next_turn():
         print_slow("OK, now has the laptop been passed (Y/N): ")
         ready = input()
     os.system('clear')
-
 def draw_card(player_deck, deck):
     random.shuffle(deck)
     x = deck.pop(0)
     player_deck.append(x)
     return player_deck
-
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
     print("Centre card:", end = " ")
@@ -181,7 +173,6 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         center_card, player_deck, other_player_deck, repeat = play_card(player_deck, other_player_deck, center_card, deck, main_player, other_player)
 
     return center_card, player_deck, other_player_deck, repeat
-
 def check_deck(deck):
     if len(deck) <= 5:
         deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'R⏭', 
@@ -194,7 +185,6 @@ def check_deck(deck):
          'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'B⏭',]
         random.shuffle(deck)
     return deck
-
 def main(deck):
     introduction()
     center_card = deck.pop(0)
