@@ -154,13 +154,13 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
             colour = input()
 
         if colour == "R":
-            center_card = coloured("RED")
+            center_card = "RED"
         elif colour == "B":
-            center_card = coloured("BLUE")
+            center_card = "BLUE"
         elif colour == "Y":
-            center_card = coloured("YELLOW")
+            center_card = "YELLOW"
         elif colour == "G":
-            center_card = coloured("GREEN")
+            center_card = "GREEN"
 
         print()
         print_slow("Four cards are added to {}'s deck".format(other_player))
