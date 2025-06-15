@@ -197,10 +197,12 @@ def main(deck):
 
     print_slow("Player1, enter your name: ")
     player1 = input()
+    player1 = player1.capitalize()
     print_slow("Player2, enter your name: ")
     player2 = input()
+    player2 = player2.capitalize()
     print()
-    print_slow("{} starts first!".format(player1.capitalize()))
+    print_slow("{} starts first!".format(player1))
     sleep(2)
     os.system('clear')
 
