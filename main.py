@@ -98,8 +98,8 @@ def draw_card(player_deck, deck):
     return player_deck
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
-    center_card = coloured(center_card)
-    print("Centre card:" + center_card)
+    x = coloured(center_card)
+    print("Centre card:" + x)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
     print_with_colour(player_deck)
