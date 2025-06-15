@@ -39,7 +39,7 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
-def print_colour_card(center_card):
+def coloured(center_card):
     i = center_card
     if i[0] == "B":
         i = Fore.BLUE + Style.BRIGHT + i + Style.RESET_ALL
@@ -98,10 +98,8 @@ def draw_card(player_deck, deck):
     return player_deck
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
-    center_card = deck.pop(0)
-    print("Centre card:", end = " ")
-
-    print_colour_card(center_card)
+    center_card = coloured(center_card)
+    print("Centre card:" + center_card)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
     print_with_colour(player_deck)
@@ -131,7 +129,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
                 break
         
         print()
-        i = print_colour_card(card)
+        i = coloured(card)
         print_slow("{} is successfully placed".format(i))
         print()
         player_deck.remove(card)
@@ -156,13 +154,13 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
             colour = input()
 
         if colour == "R":
-            center_card = print_colour_card("RED")
+            center_card = coloured("RED")
         elif colour == "B":
-            center_card = print_colour_card("BLUE")
+            center_card = coloured("BLUE")
         elif colour == "Y":
-            center_card = print_colour_card("YELLOW")
+            center_card = coloured("YELLOW")
         elif colour == "G":
-            center_card = print_colour_card("GREEN")
+            center_card = coloured("GREEN")
 
         print()
         print_slow("Four cards are added to {}'s deck".format(other_player))
@@ -173,7 +171,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print()
         center_card, player_deck, other_player_deck, repeat = play_card(player_deck, other_player_deck, center_card, deck, main_player, other_player)
 
-    return center_card, player_deck, other_player_deck, repeat
+    return center_card, player_deck, other_player_deck, repeat, deck
 def check_deck(deck):
     if len(deck) <= 5:
         deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'R⏭', 
@@ -206,10 +204,10 @@ def main(deck):
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
-        center_card, player1_deck, player2_deck, repeat = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
+        center_card, player1_deck, player2_deck, repeat, deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
         next_turn()
-        center_card, player2_deck, player1_deck, repeat = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
+        center_card, player2_deck, player1_deck, repeat, deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
         next_turn()
         
