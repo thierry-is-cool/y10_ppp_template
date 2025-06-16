@@ -69,7 +69,7 @@ cards as best you can.""")
         print()
         
     for i in range(101):
-        print(Style.BRIGHT + Fore.CYAN + f"\rLoading: {i}%", end="")
+        print(Style.BRIGHT + Fore.CYAN + "\rLoading: {}%".format("i"), end="")
         time.sleep(0.025)
 
     print(Style.RESET_ALL)
