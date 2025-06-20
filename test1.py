@@ -1,8 +1,7 @@
-from colorama import Fore, init, Style
-i = Fore.BLUE + Style.BRIGHT + "hi" + Style.RESET_ALL
+from tqdm import tqdm
+import time
 
-deck= []
-
-deck.append(i)
-
-print(deck)
+for i in tqdm(range(100)):
+    time.sleep(0.1)
+    if i == 99:
+        time.sleep(2)

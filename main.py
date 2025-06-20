@@ -1,7 +1,8 @@
 from colorama import Fore, Back, Style
 import random
 import time
-from time import sleep
+import tqdm
+
 import os 
 
 deck = [ 'R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6','R7', 'R8', 'R9', 'R+2', 'RS', 
@@ -18,7 +19,7 @@ random.shuffle(deck)
 def print_slow(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
-        sleep(0.025)
+        time.sleep(0.025)
     return None
 def print_with_colour(deck):
     deck1 = []
@@ -67,10 +68,12 @@ or if you have any wild cards. You must draw a card from the draw pile if you ha
 The aim of UNO is to be the first player to eliminate all their cards so you'll want to avoid picking up 
 cards as best you can.""")
         print()
-        
-    for i in range(101):
-        print(Style.BRIGHT + Fore.CYAN + "\rLoading: {}%".format(i), end="")
-        time.sleep(0.025)
+        print()
+
+    for i in tqdm.tqdm(range(100)):
+        time.sleep(0.05)
+        if i == 99:
+            time.sleep(2)
 
     print(Style.RESET_ALL)
     print()
@@ -82,7 +85,7 @@ def distribute_cards(number, deck):
 
     return player_deck, deck
 def next_turn():
-    sleep(2)
+    time.sleep(2)
     os.system('clear')
     print_slow("The player's turn has ended. Please pass the laptop to the next user")
     print()
@@ -205,7 +208,7 @@ def main(deck):
     player2 = player2.capitalize()
     print()
     print_slow("{} starts first!".format(player1))
-    sleep(2)
+    time.sleep(2)
     os.system('clear')
 
     while len(player1_deck) != 0 or len(player2_deck) != 0:
