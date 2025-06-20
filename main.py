@@ -69,7 +69,7 @@ cards as best you can.""")
         print()
         
     for i in range(101):
-        print(Style.BRIGHT + Fore.CYAN + "\rLoading: {}%".format("i"), end="")
+        print(Style.BRIGHT + Fore.CYAN + "\rLoading: {}%".format(i), end="")
         time.sleep(0.025)
 
     print(Style.RESET_ALL)
@@ -96,11 +96,11 @@ def draw_card(player_deck, deck):
     random.shuffle(deck)
     x = deck.pop(0)
     player_deck.append(x)
-    return player_deck
+    return player_deck, x, deck
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
     x = coloured(center_card)
-    print("Centre card:" + x)
+    print("Centre card: " + x)
     print()
     print_slow("{}, this is your deck: ".format(main_player))
     print_with_colour(player_deck)
@@ -115,8 +115,9 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         card = input()
 
     if card == 'd':
-        player_deck = draw_card(player_deck, deck)
-        print_slow("You have drawn the card!")
+        player_deck, card_drawn, deck = draw_card(player_deck, deck)
+        card_drawn = coloured(card_drawn)
+        print_slow("You have drawn the card: {}".format(card_drawn))
         print()
         print()
 
@@ -126,7 +127,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
             print_slow("This card is not valid, please reenter, press 'd' to draw card: ")
             card = input()
             if card == 'd':
-                draw_card(player_deck, deck)
+                player_deck, card_drawn, deck = draw_card(player_deck, deck)
                 break
         
         print()
@@ -146,7 +147,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print()
         print_slow("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
-            other_player_deck = draw_card(other_player_deck, deck)
+            other_player_deck, card_drawn, deck = draw_card(other_player_deck, deck)
     if "W" in card:
         print()
         print_slow("Since you got a wild card, choose a colour to proceed (R,B,Y,G): ")
@@ -167,7 +168,7 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print()
         print_slow("Four cards are added to {}'s deck".format(other_player))
         for i in range(4):
-            other_player_deck = draw_card(other_player_deck, deck)
+            other_player_deck, card_drawn, deck = draw_card(other_player_deck, deck)
 
     while repeat == True:
         print()
