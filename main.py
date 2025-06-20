@@ -21,6 +21,10 @@ def print_slow(txt):
         print(x, end='', flush = True)  
         time.sleep(0.025)
     return None
+def print_fast(txt):
+    for x in txt:                     
+        print(x, end='', flush = True)  
+        time.sleep(0.01)
 def print_with_colour(deck):
     deck1 = []
     for i in deck:
@@ -55,6 +59,14 @@ def coloured(center_card):
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
+    print_fast(r"""
+ _   _ _   _  ___     ____              _    ____                      
+| | | | \ | |/ _ \   / ___|__ _ _ __ __| |  / ___| __ _ _ __ ___   ___ 
+| | | |  \| | | | | | |   / _` | '__/ _` | | |  _ / _` | '_ ` _ \ / _ \
+| |_| | |\  | |_| | | |__| (_| | | | (_| | | |_| | (_| | | | | | |  __/
+ \___/|_| \_|\___/   \____\__,_|_|  \__,_|  \____|\__,_|_| |_| |_|\___|""")
+
+    print()
     print()
     print_slow('Do you want to review the rules?(Y/N): ')
     rules = input()
