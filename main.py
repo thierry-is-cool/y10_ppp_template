@@ -80,7 +80,7 @@ def distribute_cards(number, deck):
         x = deck.pop(i)
         player_deck.append(x)
 
-    return player_deck
+    return player_deck, deck
 def next_turn():
     sleep(2)
     os.system('clear')
@@ -194,8 +194,8 @@ def main(deck):
         deck.append("W+4")
         center_card = deck.pop(0)
 
-    player1_deck = distribute_cards(7,deck)
-    player2_deck = distribute_cards(7,deck)
+    player1_deck,deck = distribute_cards(7,deck)
+    player2_deck, deck = distribute_cards(7,deck)
 
     print_slow("Player1, enter your name: ")
     player1 = input()
