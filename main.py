@@ -171,12 +171,12 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
         print()
         repeat = True
     
-    if "+2" in card:
+    elif "+2" in card:
         print()
         print_slow("Two cards are added to {}'s deck".format(other_player))
         for i in range(2):
             other_player_deck, card_drawn, deck = draw_card(other_player_deck, deck)
-    if "W" in card:
+    elif "W" in card:
         print()
         print_slow("Since you got a wild card, choose a colour to proceed (R,B,Y,G): ")
         colour = input()
