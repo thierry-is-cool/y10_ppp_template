@@ -30,6 +30,7 @@ def print_fast(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
         time.sleep(0.01)
+
 def print_with_colour(deck):
     deck1 = []
     for i in deck:
@@ -50,6 +51,9 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
+
+
+
 def coloured(center_card):
     i = center_card
     if i[0] == "B":
