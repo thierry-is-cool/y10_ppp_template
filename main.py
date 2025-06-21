@@ -84,6 +84,7 @@ def introduction():
 or if you have any wild cards. You must draw a card from the draw pile if you have no playable cards. 
 The aim of UNO is to be the first player to eliminate all their cards so you'll want to avoid picking up 
 cards as best you can.""")
+        time.sleep(2)
         print()
         print()
 
