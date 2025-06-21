@@ -21,7 +21,11 @@ def print_slow(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
         time.sleep(0.025)
+
+
     return None
+
+
 def print_fast(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
@@ -90,13 +94,14 @@ cards as best you can.""")
 
     print(Style.RESET_ALL)
     print()
+
 def distribute_cards(number, deck):
     player_deck = []
     for i in range(number):
         x = deck.pop(i)
         player_deck.append(x)
-
     return player_deck, deck
+
 def next_turn():
     time.sleep(2)
     os.system('clear')
@@ -108,11 +113,13 @@ def next_turn():
         print_slow("OK, now has the laptop been passed (Y/N): ")
         ready = input()
     os.system('clear')
+
 def draw_card(player_deck, deck):
     random.shuffle(deck)
     x = deck.pop(0)
     player_deck.append(x)
     return player_deck, x, deck
+
 def play_card(player_deck,other_player_deck,center_card, deck, main_player, other_player):
     repeat = False
     x = coloured(center_card)
