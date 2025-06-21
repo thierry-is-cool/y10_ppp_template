@@ -87,7 +87,7 @@ cards as best you can.""")
         time.sleep(2)
         print()
         print()
-
+        
     for i in tqdm.tqdm(range(100)):
         time.sleep(0.05)
         if i == 99:
