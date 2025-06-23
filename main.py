@@ -241,15 +241,17 @@ def main(deck):
     time.sleep(2)
     os.system('clear')
 
-    while len(player1_deck) != 0 and len(player2_deck) != 0:
+    valid = True
+
+    while valid:
         center_card, player1_deck, player2_deck, repeat, deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
-        if len(player1_deck) != 0 and len(player2_deck) != 0:
+        if len(player1_deck) == 0 or len(player2_deck) == 0:
             break
         next_turn()
         center_card, player2_deck, player1_deck, repeat, deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
-        if len(player1_deck) != 0 and len(player2_deck) != 0:
+        if len(player1_deck) == 0 or len(player2_deck) == 0:
             break
         next_turn()
         
