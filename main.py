@@ -170,9 +170,12 @@ def play_card(player_deck,other_player_deck,center_card, deck, main_player, othe
 
     if "S" in card:
         print()
-        print_slow("Since {}'s turn is skipped, it is {}'s turn again!".format(other_player, main_player))
-        print()
-        repeat = True
+        if len(player_deck) == 0:
+            pass
+        else:
+            print_slow("Since {}'s turn is skipped, it is {}'s turn again!".format(other_player, main_player))
+            print()
+            repeat = True
     
     elif "+2" in card:
         print()
@@ -282,7 +285,7 @@ def main(deck):
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠑⠒⠦⠤⠤⠤⠤⠤⠔⠒⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⠉⠉⢙⡍⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠉⠀⠀""")
     
-    
+
 main(deck)
 
 
