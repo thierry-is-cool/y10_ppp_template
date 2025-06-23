@@ -25,7 +25,6 @@ def print_slow(txt):
 
     return None
 
-
 def print_fast(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
@@ -51,8 +50,6 @@ def print_with_colour(deck):
 
     for i in range(len(deck1)):
         print(deck1[i], end = " ")
-
-
 
 def coloured(center_card):
     i = center_card
