@@ -1,7 +1,7 @@
 from colorama import Fore, Back, Style
 import random
 import time
- 
+from tqdm import tqdm
 
 import os 
 
