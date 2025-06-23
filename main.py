@@ -99,7 +99,7 @@ cards as best you can.""")
     print()
 
 def distribute_cards(number, deck):
-    player_deck = ["W+4"]
+    player_deck = []
     for i in range(number):
         x = deck.pop(i)
         player_deck.append(x)
