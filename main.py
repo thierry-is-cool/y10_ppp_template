@@ -28,7 +28,7 @@ def print_slow(txt):
 def print_fast(txt):
     for x in txt:                     
         print(x, end='', flush = True)  
-        time.sleep(0.005)
+        time.sleep(0.0075)
 
 def print_with_colour(deck):
     deck1 = []
