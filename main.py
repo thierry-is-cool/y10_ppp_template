@@ -230,8 +230,8 @@ def main(deck):
         deck.append("W+4")
         center_card = deck.pop(0)
 
-    player1_deck,deck = distribute_cards(1,deck)
-    player2_deck, deck = distribute_cards(1,deck)
+    player1_deck,deck = distribute_cards(7,deck)
+    player2_deck, deck = distribute_cards(7,deck)
 
     print_slow("Player1, enter your name: ")
     player1 = input()
