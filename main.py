@@ -1,7 +1,7 @@
 from colorama import Fore, Back, Style
 import random
 import time
-import tqdm
+ 
 
 import os 
 
@@ -25,7 +25,7 @@ def print_slow(txt):
 
     return None
 
-def print_fast(txt):
+def print_fast(txt):    
     for x in txt:                     
         print(x, end='', flush = True)  
         time.sleep(0.0075)
