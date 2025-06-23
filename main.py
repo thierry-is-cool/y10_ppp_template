@@ -62,6 +62,7 @@ def coloured(center_card):
     elif i[0] == "G":
             i = Fore.GREEN + Style.BRIGHT + i + Style.RESET_ALL
     return i
+
 def introduction():
     os.system('clear')
     print_slow("Welcome to two player UNO by Thierry")
@@ -213,6 +214,7 @@ def check_deck(deck):
          'B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6','B7', 'B8', 'B9', 'B+2', 'B⏭',]
         random.shuffle(deck)
     return deck
+
 def main(deck):
     introduction()
     center_card = deck.pop(0)
