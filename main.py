@@ -225,8 +225,8 @@ def main(deck):
         deck.append("W+4")
         center_card = deck.pop(0)
 
-    player1_deck,deck = distribute_cards(7,deck)
-    player2_deck, deck = distribute_cards(7,deck)
+    player1_deck,deck = distribute_cards(1,deck)
+    player2_deck, deck = distribute_cards(1,deck)
 
     print_slow("Player1, enter your name: ")
     player1 = input()
@@ -239,15 +239,15 @@ def main(deck):
     time.sleep(2)
     os.system('clear')
 
-    while len(player1_deck) != 0 or len(player2_deck) != 0:
+    while len(player1_deck) != 0 and len(player2_deck) != 0:
         center_card, player1_deck, player2_deck, repeat, deck = play_card(player1_deck, player2_deck,center_card,deck, player1, player2)
         check_deck(deck)
-        if len(player1_deck) != 0 or len(player2_deck) != 0:
+        if len(player1_deck) != 0 and len(player2_deck) != 0:
             break
         next_turn()
         center_card, player2_deck, player1_deck, repeat, deck = play_card(player2_deck, player1_deck,center_card,deck, player2, player1)
         check_deck(deck)
-        if len(player1_deck) != 0 or len(player2_deck) != 0:
+        if len(player1_deck) != 0 and len(player2_deck) != 0:
             break
         next_turn()
         
